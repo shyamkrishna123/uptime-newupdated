@@ -1,0 +1,21 @@
+</!DOCTYPE html>
+<html>
+<body>
+{% extends 'suyatiUptime/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ post.server }}</h1>
+        <p>{{ post.details|linebreaksbr }}</p>
+         <p class="ipAddress">{{ post.ipAddress|linebreaksbr }}</p>
+    </div>
+{% endblock %}
+
+</body>
+</html>

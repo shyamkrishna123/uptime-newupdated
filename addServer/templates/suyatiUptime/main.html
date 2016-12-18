@@ -1,0 +1,26 @@
+
+{% extends 'suyatiUptime/base.html' %}
+
+{% block content %}
+<table>
+<thead>
+	<tr>
+	<th>Server Name</th>
+	<th>Up/Down</th>
+	</tr>
+</thead>
+<tbody>
+	 {% for post in posts %}
+	 
+        <tr class="post">
+            
+           <td> <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.server }}</a></h3></td>
+           <td> <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.ipAddress }}</a></h3></td>
+            
+        </tr>
+    {% endfor %}
+
+</tbody>
+</table>
+   
+{% endblock %}
